@@ -43,7 +43,6 @@ module.exports = {
   theme: {
     fontSize,
     screens: {
-      xxs: { min: "280px", max: "350px" },
       xs: { max: "575px" },
       sm: { min: "576px", max: "768px" },
       md: { min: "769px", max: "991px" },
@@ -161,6 +160,9 @@ module.exports = {
       space: ["Space Grotesk", "sans-serif", "Arial"],
     },
     extend: {
+      boxShadow: {
+        'bottom': '0 4px 2px -2px rgb(0 0 0 / 0.1)',
+      },
       lineHeight: {
         ...lineHeight,
       },

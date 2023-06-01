@@ -9,7 +9,7 @@ import Home from '@/pages';
 
 describe('Home', () => {
   const mockState = { out: 10 };
-  const middlewares = [thunk]
+  const middlewares = [thunk];
   const mockStore = configureStore(middlewares);
   const store = mockStore(mockState);
 
@@ -20,7 +20,7 @@ describe('Home', () => {
       </Provider>
     );
 
-    const heading = screen.getByRole('home-section', { hidden: true });
+    const heading = screen.getByRole('home-section');
     const headingText = 'Hello World from new planet!!';
 
     expect(heading).toHaveTextContent(headingText);

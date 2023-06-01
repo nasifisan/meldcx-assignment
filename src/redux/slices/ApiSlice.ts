@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import ReducerMappers from '../constants/reducerMapper';
-import { getActiveDeviceThunk } from '../thunks/DeviceThunks';
 import { DeviceResponse } from '@/models/Api';
+import { getActiveDeviceThunk } from '../thunks/thunks';
 
 interface Response {
   loading: boolean;

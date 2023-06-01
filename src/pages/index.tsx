@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
 
-import { getActiveDeviceThunk } from '@/redux/thunks/DeviceThunks';
 import { useAppDispatch } from '@/redux/hooks';
+import { getActiveDeviceThunk } from '@/redux/thunks/thunks';
 
 export default function Home() {
   const dispatch = useAppDispatch();

@@ -33,8 +33,8 @@ HttpClient.interceptors.response.use(
         try {
           // await authResolver.getToken(makeStore().dispatch);
 
-          originalRequest._retry = true;
-          return HttpClient(error.config);
+          // originalRequest._retry = true;
+          // return HttpClient(error.config);
         } catch (err) {
           gotToLogout();
         }

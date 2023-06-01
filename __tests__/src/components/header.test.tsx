@@ -13,12 +13,12 @@ describe('Header', () => {
 
   it('no user', () => {
     const mockState = {
-        Auth: {
-          user: {
-            Name: ''
-          },
+      Auth: {
+        user: {
+          Name: '',
         },
-      };
+      },
+    };
     const store = mockStore(mockState);
 
     render(
@@ -33,15 +33,14 @@ describe('Header', () => {
     expect(heading).toHaveTextContent(headingText);
   });
 
-
   it('Logged in user', () => {
     const mockState = {
-        Auth: {
-          user: {
-            Name: 'ddsf'
-          },
+      Auth: {
+        user: {
+          Name: 'ddsf',
         },
-      };
+      },
+    };
     const store = mockStore(mockState);
 
     render(
