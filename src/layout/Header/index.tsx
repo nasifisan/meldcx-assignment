@@ -42,7 +42,7 @@ const Header = () => {
                 <div>
                   <FaHome />
                 </div>
-                <div className="flex flex-col justify-end text-16 leading-20 font-semibold group-hover:text-warn">
+                <div role='home' className="flex flex-col justify-end text-16 leading-20 font-semibold group-hover:text-warn">
                   Home
                 </div>
               </div>
@@ -51,12 +51,12 @@ const Header = () => {
         </div>
 
         {isLoggedIn ? (
-          <div className="btn-btn" onClick={() => gotToLogout()}>
+          <div role='loggedIn' className="btn-btn" onClick={() => gotToLogout()}>
             Logout
           </div>
         ) : (
           <Link href={RoutePaths.LOGIN}>
-            <button className="btn-btn">Signin/Signup</button>
+            <button role='singup-button' className="btn-btn">Signin/Signup</button>
           </Link>
         )}
       </nav>
