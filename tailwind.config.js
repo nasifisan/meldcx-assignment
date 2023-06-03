@@ -5,6 +5,7 @@ const heightWidth = {};
 const fontSize = {};
 const lineHeight = {};
 const borderRadius = {};
+const rotate = {};
 
 //------------------------------
 // @Spacing (margin,padding,gap)
@@ -13,7 +14,13 @@ for (let i = 0; i <= 300; i++) {
   spacing[i * 2] = `${i * 2}px`;
 }
 
-//------------------------------
+//rotations
+
+for (let i = 0; i<=360; ++i) {
+  rotate[i] = `${i}deg`;
+}
+
+//-----------------------------t-
 // @FontSize
 //-------------------------------
 for (let i = 2; i <= 100; i++) {
@@ -180,11 +187,7 @@ module.exports = {
         1: "1",
       },
       rotate: {
-        "-270": "270deg",
-        15: "15deg",
-        30: "30deg",
-        60: "60deg",
-        270: "270deg",
+        ...rotate
       },
       scale: {
         "-1": "-1",

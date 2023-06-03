@@ -23,7 +23,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     const formPayload = {
-      name: e.target.elements.email.value,
+      email: e.target.elements.email.value,
       password: e.target.elements.password.value,
     };
 

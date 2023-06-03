@@ -4,5 +4,7 @@ export interface Device {
 }
 
 export interface DeviceResponse {
-    devices: Device[]
+    devices: Device[] | null
 }
+
+export type PartialDeviceResponse = DeviceResponse | null;

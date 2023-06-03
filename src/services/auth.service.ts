@@ -15,7 +15,7 @@ export class AuthService {
         'Content-Type': 'application/json',
       },
       data: {
-        email: data.email,
+        email: data?.email,
         password: data?.password
       }
     });
