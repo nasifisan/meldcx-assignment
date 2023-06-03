@@ -1,22 +1,23 @@
-import { useAppDispatch } from '@/redux/hooks';
-import { getActiveDeviceThunk } from '@/redux/thunks/DeviceThunks';
 import Head from 'next/head';
-import { useEffect } from 'react';
+
+import ActiveDevice from '@/container/Home/active-device';
+import NotifyCard from '@/container/Home/notify-card';
 
 export default function Home() {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(getActiveDeviceThunk());
-  }, [])
-
   return (
     <>
       <Head>
         <title>hello</title>
       </Head>
-      <section className="flex min-h-screen flex-col items-center justify-between p-24 text-black main-container">
-        Hello World from new planet!!
+      <section role="home-section" className="main-container">
+        <div className="grid grid-cols-5 md:grid-cols-1 sm:grid-cols-1 xs:grid-cols-1">
+          <div className="col-span-3 flex justify-center h-full">
+            <ActiveDevice />
+          </div>
+          <div className="col-span-2 flex justify-center my-50 md:my-20 sm:my-20 xs:my-20">
+            <NotifyCard />
+          </div>
+        </div>
       </section>
     </>
   );

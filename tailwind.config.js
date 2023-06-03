@@ -5,6 +5,7 @@ const heightWidth = {};
 const fontSize = {};
 const lineHeight = {};
 const borderRadius = {};
+const rotate = {};
 
 //------------------------------
 // @Spacing (margin,padding,gap)
@@ -13,7 +14,13 @@ for (let i = 0; i <= 300; i++) {
   spacing[i * 2] = `${i * 2}px`;
 }
 
-//------------------------------
+//rotations
+
+for (let i = 0; i<=360; ++i) {
+  rotate[i] = `${i}deg`;
+}
+
+//-----------------------------t-
 // @FontSize
 //-------------------------------
 for (let i = 2; i <= 100; i++) {
@@ -43,7 +50,6 @@ module.exports = {
   theme: {
     fontSize,
     screens: {
-      xxs: { min: "280px", max: "350px" },
       xs: { max: "575px" },
       sm: { min: "576px", max: "768px" },
       md: { min: "769px", max: "991px" },
@@ -161,6 +167,9 @@ module.exports = {
       space: ["Space Grotesk", "sans-serif", "Arial"],
     },
     extend: {
+      boxShadow: {
+        'bottom': '0 4px 2px -2px rgb(0 0 0 / 0.1)',
+      },
       lineHeight: {
         ...lineHeight,
       },
@@ -178,11 +187,7 @@ module.exports = {
         1: "1",
       },
       rotate: {
-        "-270": "270deg",
-        15: "15deg",
-        30: "30deg",
-        60: "60deg",
-        270: "270deg",
+        ...rotate
       },
       scale: {
         "-1": "-1",

@@ -42,6 +42,8 @@ export const makeStore = () => {
   return configureStore({
     reducer: mainReducer,
     preloadedState: defaultInitState,
+    devTools: process.env.NODE_ENV !== "production",
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({}).concat([]),
   });
 };
 

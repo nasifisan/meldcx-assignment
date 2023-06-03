@@ -1,7 +1,11 @@
+import { GiAtomicSlashes } from 'react-icons/gi';
+
 const HomePageLoading = () => {
   return (
     <div className="w-full h-screen flex justify-center">
-      Loading...
+      <div className="flex flex-col justify-center text-100 animate-bounce">
+        <GiAtomicSlashes />
+      </div>
     </div>
   );
 };

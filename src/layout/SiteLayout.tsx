@@ -16,11 +16,11 @@ const SiteLayout = ({ children }: PropsWithChildren<{}>) => {
         <Header />
       )}
       <main>{children}</main>
-      {headerLessRoutes.includes(router.pathname) ? (
+      {/* {headerLessRoutes.includes(router.pathname) ? (
         <></>
       ) : (
         <Footer />
-      )}
+      )} */}
     </>
   );
 };

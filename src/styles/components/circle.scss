@@ -1,0 +1,28 @@
+.orbit {
+  @apply w-[279px] h-[279px] relative flex justify-center;
+}
+
+.device-count {
+  @apply flex flex-col justify-center text-24 font-bold leading-30 
+  rounded-[100%] bg-primary-1000 text-center text-accent-50;
+}
+
+.inner-circle-1 {
+  @apply absolute rounded-[100%] border-1 border-dashed
+    w-[101px] h-[101px] left-0 right-0 top-0 bottom-0 m-auto flex justify-center animate-[spin_10s_linear_infinite];
+}
+
+.inner-circle-2 {
+  @apply absolute rounded-[100%] border-1 border-dashed border-primary-500
+    w-[201px] h-[201px] left-0 right-0 top-0 bottom-0 m-auto flex justify-center animate-[spin_15s_linear_infinite];
+}
+
+.inner-device-1 {
+  @apply absolute w-[11px] h-[11px] left-0 right-0 top-0 bottom-0 m-auto
+    rounded-[100%] bg-success-400;
+}
+
+.inner-device-2 {
+  @apply absolute w-[15px] h-[15px] left-0 right-0 top-0 bottom-0 m-auto
+    rounded-[100%] bg-warn-800;
+}

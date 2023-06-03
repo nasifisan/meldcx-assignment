@@ -26,21 +26,21 @@ HttpClient.interceptors.response.use(
       alert('NETWORK ERROR');
     } else {
       const code = error.response.status;
-      const response = error.response.data;
+      // const response = error.response.data;
       const originalRequest = error.config;
 
-      if (code === 401 && !originalRequest._retry) {
-        try {
-          // await authResolver.getToken(makeStore().dispatch);
+      // if (code === 401 && !originalRequest._retry) {
+      //   try {
+      //     // await authResolver.getToken(makeStore().dispatch);
 
-          originalRequest._retry = true;
-          return HttpClient(error.config);
-        } catch (err) {
-          gotToLogout();
-        }
-      }
+      //     // originalRequest._retry = true;
+      //     // return HttpClient(error.config);
+      //   } catch (err) {
+      //     gotToLogout();
+      //   }
+      // }
 
-      if (code === 400 && !originalRequest._retry) {
+      if ((code === 400 || code === 401) && !originalRequest._retry) {
         gotToLogout();
       }
 

@@ -4,5 +4,14 @@ export interface Device {
 }
 
 export interface DeviceResponse {
-    devices: Device[]
+    devices: Device[] | null
 }
+
+export interface Notify {
+    name: string;
+    email: string;
+    repoUrl: string;
+    message: string;
+}
+
+export type PartialDeviceResponse = DeviceResponse | null;

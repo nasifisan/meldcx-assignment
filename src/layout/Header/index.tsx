@@ -1,11 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import {
-  FaHome,
-  FaShoppingCart,
-  FaProductHunt,
-} from 'react-icons/fa';
 
 import { RoutePaths } from '@/constants/RoutePaths';
 import { useAppSelector } from '@/redux/hooks';
@@ -24,7 +19,7 @@ const Header = () => {
   return (
     <div className="w-full sticky z-999 top-0 bg-white-50">
       <nav className="main-container flex justify-between items-center py-16">
-        <div className='flex'>
+        <div className="flex">
           <div className="rounded-full shrink-0">
             <Image
               className="rounded-full"
@@ -35,28 +30,24 @@ const Header = () => {
               priority
             />
           </div>
-
-          <div className="flex flex-row gap-32 items-center text-24 text-black">
-            <Link href={RoutePaths.HOME}>
-              <div className="flex space-x-6 group">
-                <div>
-                  <FaHome />
-                </div>
-                <div className="flex flex-col justify-end text-16 leading-20 font-semibold group-hover:text-warn">
-                  Home
-                </div>
-              </div>
-            </Link>
-          </div>
         </div>
 
         {isLoggedIn ? (
-          <div className="btn-btn" onClick={() => gotToLogout()}>
+          <div
+            role="loggedIn"
+            className="btn-btn bg-primary-1100 text-white-50 text-16 leading-20"
+            onClick={() => gotToLogout()}
+          >
             Logout
           </div>
         ) : (
           <Link href={RoutePaths.LOGIN}>
-            <button className="btn-btn">Signin/Signup</button>
+            <button
+              role="singup-button"
+              className="btn-btn bg-primary-1100 text-white-50 text-16 leading-20"
+            >
+              Signin/Signup
+            </button>
           </Link>
         )}
       </nav>

@@ -49,8 +49,10 @@ export const goToLogin = async (data: any, dispatch: Function) => {
         dispatch
       );
     }
+
+    return true;
   } catch {
-    alert("something went wrong!")
+    return false;
   }
 };
 
