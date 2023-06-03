@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import ReducerMappers from '../constants/reducerMapper';
 import { DeviceResponse } from '@/models/Api';
-import { getActiveDeviceThunk } from '../thunks/thunks';
+import { getActiveDeviceThunk, notifyThunk } from '../thunks/thunks';
 
 interface Response {
   loading: boolean;
@@ -12,10 +12,16 @@ interface Response {
 
 interface StateType {
   getActiveDevices: Response;
+  notify: Response;
 }
 
-export const initialState: StateType = {
+const initialState: StateType = {
   getActiveDevices: {
+    loading: false,
+    data: null,
+    error: '',
+  },
+  notify: {
     loading: false,
     data: null,
     error: '',
@@ -49,6 +55,27 @@ const ApiSlice = createSlice({
           state.getActiveDevices.loading = false;
           state.getActiveDevices.data = null;
           state.getActiveDevices.error = action.error.message;
+        }
+      ),
+      builder.addCase(
+        notifyThunk.pending,
+        (state: StateType, action: PayloadAction) => {
+          state.notify.loading = true;
+        }
+      ),
+      builder.addCase(
+        notifyThunk.fulfilled,
+        (state: StateType, action: PayloadAction<any | null>) => {
+          state.notify.loading = false;
+          state.notify.data = action.payload;
+        }
+      ),
+      builder.addCase(
+        notifyThunk.rejected,
+        (state: StateType, action: any) => {
+          state.notify.loading = false;
+          state.notify.data = null;
+          state.notify.error = action.error.message;
         }
       );
   },

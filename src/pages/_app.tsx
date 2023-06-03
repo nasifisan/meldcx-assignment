@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { ReactNode } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import SiteLayout from '@/layout/SiteLayout';
 import AuthManager from '@/components/AuthManager';
@@ -25,6 +26,7 @@ function App(props: AppProps) {
   return (
     <>
       <AuthManager {...props}>{renderLayout()}</AuthManager>
+      <Toaster />
     </>
   );
 }
