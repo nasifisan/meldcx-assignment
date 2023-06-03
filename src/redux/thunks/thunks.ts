@@ -28,7 +28,7 @@ export const notifyThunk = createAsyncThunk(
       url: `${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/notify`,
       headers: {
         'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${getCookie(ACCESS_TOKEN_KEY)}`
+        'Authorization': `Bearer ${getCookie(ACCESS_TOKEN_KEY)}`
       },
       data: payload
     });
