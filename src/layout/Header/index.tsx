@@ -37,7 +37,7 @@ const Header = () => {
         {isLoggedIn ? (
           <div
             role="loggedIn"
-            className="btn-btn bg-primary-1100 text-white-50 text-16 leading-20"
+            className="btn-btn bg-primary-1100 text-white-50 text-16 leading-20 cursor-pointer"
             onClick={() => gotToLogout()}
           >
             Logout
