@@ -25,7 +25,7 @@ npm test
 * Notify button error handling
 * A success toast will be shown if notified successfully
 * For a successful notify, notify button will be disabled immediately. (As it indicates the test as done. Note: After a reload on browser you'll be able to click notify button again)
-* An error toast will be shown if any error get to notify
+* An error toast will be shown if any error occurs while clicking notify
 * User will be redirected to login page if no accesstoken found or getting 401 status for notify api
 * User can not go to login page without logout the current successful session
 
