@@ -16,11 +16,10 @@ export class AuthService {
       },
       data: {
         email: data?.email,
-        password: data?.password
-      }
+        password: data?.password,
+      },
     });
   }
-
 
   async renewAccessToken(refreshToken: any): Promise<any> {
     const bodyPrams = new URLSearchParams();

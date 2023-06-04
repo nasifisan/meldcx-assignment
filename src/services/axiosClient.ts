@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { authResolver } from './auth-resolver.service';
-import { gotToLogout } from './auth-helper.service';
-import { makeStore } from '@/redux/store';
+// import { authResolver } from './auth-resolver.service';
+import { ACCESS_TOKEN_KEY, gotToLogout } from './auth-helper.service';
+// import { makeStore } from '@/redux/store';
+import { getCookie } from 'cookies-next';
 
 const baseOptions = {
   timeout: 0,
@@ -27,7 +28,7 @@ HttpClient.interceptors.response.use(
     } else {
       const code = error.response.status;
       // const response = error.response.data;
-      const originalRequest = error.config;
+      // const originalRequest = error.config;
 
       // if (code === 401 && !originalRequest._retry) {
       //   try {
@@ -40,7 +41,9 @@ HttpClient.interceptors.response.use(
       //   }
       // }
 
-      if ((code === 400 || code === 401) && !originalRequest._retry) {
+      const token = getCookie(ACCESS_TOKEN_KEY);
+
+      if (code === 401 && token) {
         gotToLogout();
       }
 

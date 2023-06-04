@@ -2,6 +2,7 @@ import { useAppDispatch } from '@/redux/hooks';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { MdMailOutline, MdOutlineLockPerson } from 'react-icons/md';
+import toast from 'react-hot-toast';
 
 import { goToLogin } from '@/services/auth-helper.service';
 import { RoutePaths } from '@/constants/RoutePaths';
@@ -15,8 +16,10 @@ const LoginForm = () => {
   const postData = async (formData: any) => {
     const res = await goToLogin(formData, dispatch);
 
-    if (res) router.push(RoutePaths.HOME);
-    else setError(true);
+    if (res?.response?.status === 401) {
+      toast.error('Please enter the correct password');
+      setError(true);
+    } else router.push(RoutePaths.HOME);
   };
 
   const formOnSubmit = (e: any) => {
@@ -74,10 +77,12 @@ const LoginForm = () => {
             placeholder="Password"
             name="password"
             className={`pl-40 py-4 shadow-bottom transition ease-in-out delay-150 
-              w-full border-b-white-800 relative bg-white-50 border-b-2 outline-none 
-              focus:outline-none focus:border-primary-400 hover:shadow-lg
+              w-full relative bg-white-50 border-b-2 outline-none 
+              focus:outline-none hover:shadow-lg
               ${
-                error ? 'border-b-warn-400 focus:border-warn-400' : ''
+                error
+                  ? 'border-b-warn-400'
+                  : 'border-b-white-800 focus:border-primary-400'
               }`}
             required
           />

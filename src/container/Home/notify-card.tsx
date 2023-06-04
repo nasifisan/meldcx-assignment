@@ -14,7 +14,9 @@ const NotifyCard = () => {
 
   useEffect(() => {
     if (notifyData.data) {
-        toast.success('Thank you for your feedback');
+      toast.success('Thank you for your feedback');
+    } else if (notifyData.error !== '') {
+      toast.error(`Sorry! we didn't received your joke`);
     }
   }, [notifyData]);
 
@@ -37,6 +39,7 @@ const NotifyCard = () => {
           className="object-center object-cover pointer-events-none"
           src={'/poker.png'}
           alt={'joker'}
+          priority
         />
       </div>
 

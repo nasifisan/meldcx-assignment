@@ -11,14 +11,19 @@ export const REFRESH_TOKEN_KEY = 'REFRESH_TOKEN';
 const EXPIRE_TIME_KEY = 'EXPIRES_IN';
 
 export const setAuthCredentials = (
-  accessToken: string,  dispatch: Function
+  accessToken: string,
+  dispatch: Function
 ) => {
   const tokenInfo = new TokenInfo(accessToken);
   const details: User = tokenInfo.getUserDetails();
 
   dispatch(setUser(details));
-  
-  if (!getCookie(ACCESS_TOKEN_KEY) && accessToken && accessToken !== '') {
+
+  if (
+    !getCookie(ACCESS_TOKEN_KEY) &&
+    accessToken &&
+    accessToken !== ''
+  ) {
     setCookie(ACCESS_TOKEN_KEY, accessToken);
   }
 };
@@ -30,7 +35,7 @@ const getAuthCredentials = (accessToken: string): User => {
   return info as User;
 };
 
-export const createSession = (dispatch : Function) => {
+export const createSession = (dispatch: Function) => {
   const token = getCookie(ACCESS_TOKEN_KEY) as string;
 
   setAuthCredentials(token, dispatch);
@@ -44,15 +49,12 @@ export const goToLogin = async (data: any, dispatch: Function) => {
     if (response?.data) {
       const accessToken = response?.data;
 
-      setAuthCredentials(
-        accessToken,
-        dispatch
-      );
+      setAuthCredentials(accessToken, dispatch);
     }
 
-    return true;
-  } catch {
-    return false;
+    return response;
+  } catch (e) {
+    return e;
   }
 };
 
