@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 import { useRouter } from 'next/router';
 
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './Footer';
 import { headerLessRoutes } from '@/constants/RoutePaths';
 
 const SiteLayout = ({ children }: PropsWithChildren<{}>) => {

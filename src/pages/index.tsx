@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>hello</title>
+        <title>Home</title>
       </Head>
       <section role="home-section" className="main-container">
         <div className="grid grid-cols-5 md:grid-cols-1 sm:grid-cols-1 xs:grid-cols-1">

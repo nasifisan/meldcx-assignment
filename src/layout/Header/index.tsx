@@ -21,14 +21,16 @@ const Header = () => {
       <nav className="main-container flex justify-between items-center py-16">
         <div className="flex">
           <div className="rounded-full shrink-0">
-            <Image
-              className="rounded-full"
-              src="/meldcx-logo.png"
-              width="150"
-              height="150"
-              alt="site-logo"
-              priority
-            />
+            <Link href={RoutePaths.HOME}>
+              <Image
+                className="rounded-full"
+                src="/meldcx-logo.png"
+                width="150"
+                height="150"
+                alt="site-logo"
+                priority
+              />
+            </Link>
           </div>
         </div>
 
