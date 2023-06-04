@@ -20,7 +20,7 @@ npm test
 # details
 * UI is responsive
 * Correct password in login page will redirect to home page
-* While submitting incorrect password, error toast and error indicatior on input box will be shown (Handling 401 status)
+* While submitting incorrect password, error toast and error indicator on input box will be shown (Handling 401 status)
 * A active device counter and a notify button with card (input box added where you can write your message) will be displayed in home page after a successful login
 * Notify button error handling
 * A success toast will be shown if notified successfully
