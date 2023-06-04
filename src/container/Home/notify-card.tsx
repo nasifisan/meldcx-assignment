@@ -14,9 +14,9 @@ const NotifyCard = () => {
 
   useEffect(() => {
     if (notifyData.data) {
-      toast.success('Thank you for your feedback');
+      toast.success('Thank you for your message');
     } else if (notifyData.error !== '') {
-      toast.error(`Sorry! we didn't received your joke`);
+      toast.error(`Sorry! we didn't receive your joke`);
     }
   }, [notifyData]);
 
